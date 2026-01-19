@@ -23,11 +23,10 @@ export default function BasicAlerts() {
 
   return (
     <Stack sx={{ 
-        width: '25%',
+        maxWidth: '450px',
         position: 'fixed',
         bottom: '20px',
-        left: '15%',
-        transform: 'translateX(-50%)',
+        left: '100px',
         zIndex: 1000,
     }} spacing={2}>
       <Alert 
