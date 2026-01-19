@@ -55,6 +55,33 @@ export const DataItemProvider = ({children}) => {
   const AddItemHandle = () => {
     if(DataStatus === "update" && currentItemId) {
       // Logic for updating an existing item
+      const originalItem = data.find(item => item.id === currentItemId);
+      
+      // Check if any data has actually changed
+      if (
+        originalItem.title === inputValue.title &&
+        originalItem.price === inputValue.price &&
+        originalItem.taxes === inputValue.taxes &&
+        originalItem.ads === inputValue.ads &&
+        originalItem.discount === inputValue.discount &&
+        originalItem.category === inputValue.category &&
+        originalItem.count === inputValue.count
+      ) {
+         // No changes, just reset mode and form
+         setCurrentItemId(null)
+         setDataStatus("create")
+         setInputValue({
+            title: '',
+            price: '',
+            taxes: '',
+            ads: '',
+            discount: '',
+            category: '',
+            count: '',
+        })
+         return; 
+      }
+
       const total = Number(inputValue.price) + Number(inputValue.taxes) + Number(inputValue.ads) - Number(inputValue.discount);
       const updatedData = data.map(item => {
         if(item.id === currentItemId) {
