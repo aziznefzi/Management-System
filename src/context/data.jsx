@@ -28,6 +28,7 @@ export const DataItemProvider = ({children}) => {
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertCondition, setAlertCondition] = useState(null); // 'create', 'update', 'delete', 'deleteAll'
   const [alertMessage, setAlertMessage] = useState(null);
+  const [updateAllertSettings, setupdateAllertSettings] = useState(false)
 
   // Opens the delete confirmation dialog for a specific item
   const handleClickOpen = (id) => {
@@ -170,8 +171,10 @@ export const DataItemProvider = ({children}) => {
         count: itemToUpdate.count,
       })
       setCurrentItemId(id)
+       setupdateAllertSettings(true)
+      }
       setDataStatus("update")
-    }
+    
     // Scroll to top to see the form
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
