@@ -1,0 +1,215 @@
+*{
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  transition: .5s;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: #1d1d1d;
+  color: #fff;
+  font-family: sans-serif;
+}
+
+.App{
+ width: 90%;
+ margin: auto;
+ padding: 10px;
+ max-width: 1200px;
+}
+
+.App .header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.App .header .logo{
+  height: 130px;
+  width: auto;
+}
+
+.App .inputs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.App .inputs .input{
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  margin: 5px 0;
+  background-color: #0e0e0e;
+  color: white;
+  border: none;
+  font-size: .9rem;
+  border-radius: 10px;
+  outline: none;
+}
+
+.App .inputs .input:focus{
+    background-color: #000;
+    transform: scale(1.01);
+}
+
+.App .inputs .input.active{
+  background-color: #000;
+  padding: 12px;
+}
+
+.App .inputs .Total-Price{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  flex-wrap: wrap; 
+}
+
+.App .inputs .Total-Price .input {
+    flex: 1 1 150px; /* Grow, shrink, min-width */
+}
+
+.App .inputs .Total-Price span{
+  background-color: #870909;
+  padding: 10px;
+  border-radius: 10px;
+  min-width: 60px;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.App .inputs button{
+  width: 100%;
+  background-color: #ff5100;
+  color: #fff;
+  font-size: 1.1rem;
+  height: 40px;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.App .inputs button:hover {
+    background-color: #e04800;
+    letter-spacing: 1px;
+}
+
+.App .inputs .search-btn{
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.App .inputs .search-btn button {
+    flex: 1 1 200px;
+}
+
+.App .Output{
+  display: flex;
+  flex-direction: column;
+  margin: 20px auto;
+  width: 100%;
+  padding: 10px;
+  min-height: 25vh;
+  border-radius: 25px;
+  border: 3px solid #ff5100;
+  overflow-x: auto; /* Allow horizontal scroll for table */
+}
+
+.App .Output .itemDetels{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Responsive columns */
+  gap: 10px;
+  font-size: 1.1rem;
+  width: 100%;
+  margin: 10px 0;
+  font-weight: bold;
+  text-align: center;
+  min-width: 600px; /* Force scroll on small screens if needed */
+}
+
+.App .Output .items{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.App .Output .items .item{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  align-items: center;
+  border-radius: 25px;
+  font-size: 15px;
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 3px solid #ff5100;
+  gap: 10px;
+  text-align: center;
+  min-width: 600px; 
+}
+
+.App .Output .items .item:hover{
+  background-color: #ff51001a;
+  transform: scale(1.005);
+  cursor: pointer;
+}
+
+/* Match column structure for headers and items */
+.App .Output .itemDetels, .App .Output .items .item {
+     grid-template-columns: 2fr 1fr 1fr 1fr 1fr 1fr 2fr 1fr 1fr;
+}
+
+.App .Output .itemDetels p, .App .Output .items .item p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  padding: 0 5px;
+}
+
+
+.App .Output .items .item button{
+  padding: 5px 10px;  
+  background-color: #ff5100;
+  border: 2px solid white;
+  color: white;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  width: 100%;
+}
+
+/* Mobile specific adjustments */
+@media (max-width: 768px) {
+    .App .inputs .Total-Price {
+        flex-direction: row;
+        gap: 5px;
+    }
+    
+    .App .inputs .Total-Price .input {
+        width: 48%; /* 2 per row roughly */
+        flex: 1 1 40%;
+    }
+
+    .App .inputs .Total-Price span {
+        width: 100%;
+        margin-top: 5px;
+    }
+}

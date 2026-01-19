@@ -1,0 +1,91 @@
+.containerDeleteDialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #00000051;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.containerDeleteDialog .deleteDialog {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    background-color: #111;
+    border-radius: 25px;
+    border: 2px solid #ff5100;
+    box-shadow: 0 0 20px #ff5100;
+    height: 40%;
+    max-width: 540px;
+    padding: 20px;
+}
+
+.containerDeleteDialog .deleteDialog .text h6 {
+  color: #ff5100;
+  background-color: transparent;
+  font-size: 2.2rem;
+  margin: 10px 0;
+}
+.containerDeleteDialog .deleteDialog .text p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.containerDeleteDialog .deleteDialog .Btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+}
+
+.containerDeleteDialog .deleteDialog .Btns button {
+  padding: 15px 25px;
+  border: 3px solid #ff5100;
+  background-color: transparent;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.containerDeleteDialog .deleteDialog .Btns .DeleteButton {
+  background-color: #ff5100;
+  color: #fff;
+  border-color: #fff;
+} 
+
+.containerDeleteDialog .deleteDialog .Btns .DeleteButton:hover {
+  background-color: #fff;
+  color: #ff5100;
+  border-color: #ff5100;
+} 
+
+.containerDeleteDialog .deleteDialog .Btns .CanselButton:hover {
+  background-color: #fff;
+  color: #ff5100;
+}
+@media (max-width: 513px) {
+    .containerDeleteDialog .deleteDialog {
+      max-width: 280px;
+      height: 30%;
+    }
+    .containerDeleteDialog .deleteDialog .Btns{
+      gap: 10px;
+    }
+    .containerDeleteDialog .deleteDialog .text h6 {
+      font-size: 1.5rem;
+    }
+    .containerDeleteDialog .deleteDialog .text p {
+      font-size: 1rem;
+    }
+    .containerDeleteDialog .deleteDialog .Btns button {
+      padding: 10px 20px;
+      font-size: 0.8rem;
+    }
+}
